@@ -561,7 +561,7 @@ function movePiece(row, col, element) {
     setTimeout(() => {
         const botMoves = getAllLegalMoves(board, "black", enPassantTarget);
         const boardBeforeBot = board.map((r) => r.map((sq) => (sq ? { ...sq } : null)));
-        const botResultBoard = makeBotMove(board, "black", 3, enPassantTarget);
+        const botResultBoard = makeBotMove(board, "black", 5, enPassantTarget);
         const didBotMove = botResultBoard !== board;
         board = botResultBoard;
         nextMoveColor = nextMoveColor === "white" ? "black" : "white";
