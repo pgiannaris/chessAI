@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="main.js" defer></script>
+    </head>
+    <style>
+        .block {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 50px;
+            font-size: 45px;
+            transition: transform 140ms ease, filter 140ms ease;
+        }
+        .block.movedTo {
+            animation: movePop 260ms ease;
+        }
+        .block.thinking {
+            filter: brightness(0.9);
+            cursor: wait;
+        }
+        .legalDot {
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        .gameCanvas {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto auto auto;
+            max-width: fit-content;
+            margin: 100px;
+        }
+        @keyframes movePop {
+            0% {
+                transform: scale(0.86);
+                filter: brightness(1.35);
+            }
+            100% {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+        }
+    </style>
+    <body>
+        <div class="gameCanvas"></div>
+    </body>
+</html>
